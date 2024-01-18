@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASHA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- bootstrap links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- bootstrap links -->
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
+    <!-- fonts links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+
+
+      /* Basic Styles */
+      .product-card {
+          margin-top: 50px;
+          margin-bottom: 5px;
+       margin-left: auto;
+       margin-right: auto;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          padding: 5px;
+          text-align: center;
+          width: 300px;
+          background-color: #ffffff;
+          box-shadow: 10px 10px 54px rgba(6, 6, 6, 0.3);
+      }
+
+      /* Product Image Styles */
+      .product-image {
+          max-width: 100%;
+          height: 229px;
+          border-radius: 10px;
+          
+      }
+
+      /* Product Title Styles */
+      .product-title {
+          font-size: 18px;
+          font-weight: bold;
+          margin: 10px 0;
+      }
+
+      /* Product Price Styles */
+      .product-price {
+          color: #000000;
+          font-size: 24px;
+          margin: 10px 0;
+      }
+
+      /* Add to Cart Button Styles */
+      .add-to-cart {
+          background-color: #ffffff;
+          color: #ffc800;
+          border: 2px solid #ffc800;
+          border-radius: 30px;
+          padding: 10px 20px;
+          cursor: pointer;
+          font-size: 16px;
+          margin: 10px 0;
+          width: 90px;
+      }
+
+      .carousel {
+      
+         
+  
+      }
+
+      .carousel .item {
+          color: #747d89;
+          min-height: 325px;
+          text-align: center;
+          overflow: hidden;
+      }
+
+      .carousel .thumb-wrapper {
+          padding: 25px 15px;
+          background: #fff;
+          border-radius: 6px;
+          text-align: center;
+          position: relative;
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      .carousel .item .img-box {
+          height: 200px;
+          margin-bottom: 20px;
+          width: 100%;
+          position: relative;
+      }
+
+      .carousel .item img {
+          max-width: 100%;
+          max-height: 100%;
+          display: inline-block;
+          position: absolute;
+          bottom: 0;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+      }
+
+      .carousel .item h4 {
+          font-size: 18px;
+      }
+
+      .carousel .item h4,
+      .carousel .item p,
+      .carousel .item ul {
+          margin-bottom: 5px;
+      }
+
+      .carousel .thumb-content .btn {
+          color: #ffc800;
+          font-size: 11px;
+          text-transform: uppercase;
+          font-weight: bold;
+          background: none;
+          border: 1px solid #ffc800;
+          padding: 6px 14px;
+          margin-top: 5px;
+          line-height: 16px;
+          border-radius: 20px;
+      }
+
+      .carousel .thumb-content .btn:hover,
+      .carousel .thumb-content .btn:focus {
+          color: #fff;
+          background: #ffc800;
+          box-shadow: none;
+      }
+
+      .carousel .thumb-content .btn i {
+          font-size: 14px;
+          font-weight: bold;
+          margin-left: 5px;
+      }
+
+      .carousel .carousel-control {
+          height: 44px;
+          width: 40px;
+          background: #ffc800;
+          margin: auto 0;
+          border-radius: 4px;
+          opacity: 0.8;
+      }
+
+      .carousel .carousel-control:hover {
+          background: #ffc800;
+          opacity: 1;
+      }
+
+      .carousel .carousel-control i {
+          font-size: 36px;
+          position: absolute;
+          top: 50%;
+          display: inline-block;
+          margin: -19px 0 0 0;
+          z-index: 5;
+          left: 0;
+          right: 0;
+          color: #fff;
+          text-shadow: none;
+          font-weight: bold;
+      }
+
+      .carousel .item-price {
+          font-size: 13px;
+          padding: 2px 0;
+      }
+
+      .carousel .item-price strike {
+          opacity: 0.7;
+          margin-right: 5px;
+      }
+
+      .star-rating li {
+          padding: 0;
+      }
+
+      .star-rating i {
+          font-size: 14px;
+          color: #ffc000;
+      }
+
+      div.col-md-12 {
+          margin-bottom: -85px;
+      }
+
+      div.col-sm-3 {
+          margin-bottom: 10px;
+     
+      }
+      Your CSS code for the custom scrollbar */
+       body {
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+    border-radius: 0px;
+    background-color: #000000;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+    background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ffc800;
+    background-image: -webkit-linear-gradient(90deg,
+                                          transparent,
+                                          rgba(0, 0, 0, 0.4) 50%,
+                                          transparent,
+                                          transparent)
+}
+
+  </style>
+</head>
+<body>
+<!-- The container element for the content and the scrollbar -->
+<div class="scrollbar" id="style-13" style="height: 100%; ">
+  <!-- The content that you want to display -->
+    <!-- top navbar -->
+    <div class="top-navbar" >
+        <p>WELCOME TO OUR SHOP</p>
+        <div class="icons">
+        
+            <a href='/register.html'><input type="button" value="Login/Register" class="login" id="user" style="background-color: #ffc800; border: none;"></a>
+        </div>
+    </div>
+    <script>
+      var name=localStorage.getItem("myValue23")
+      document.getElementById('user').value=name;
+      var resetValue="Login/Register";
+      localStorage.setItem("myValue23", resetValue);
+      function F(){
+           var name=document.getElementById('name').innerHTML;
+           var pri=document.getElementById('price').innerHTML;
+           var sel=document.getElementById('sel').value;
+           if(sel=='1'){
+               muvalue=pri*1
+           }
+           else  if(sel=='2'){
+               muvalue=pri*2
+           }
+           else  if(sel=='3'){
+               muvalue=pri*3
+           }
+           localStorage.setItem("myValue1", name);
+           localStorage.setItem("myValue2", sel);
+           localStorage.setItem("myValue", muvalue);
+           window.location.href='order.html'; 
+       }
+   </script>
+    <!-- top navbar -->
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html" id="logo"><span id="span1">T</span>AS<span>HA</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span><img src="./images/menu.png" alt="" width="30px"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="category.html">Shop</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="category.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Category
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #ffc000;">
+                  <li><a class="dropdown-item" href="cookware.html">Cookware</a></li>
+                  <li><a class="dropdown-item" href="freige.html">Refrigetion</a></li>
+                  <li><a class="dropdown-item" href="appliancs.html">Appliances </a></li>
+                  <li><a class="dropdown-item" href="food.html">Food Storage  </a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex" id="search">
+              <input class="form-control me-" type="search" placeholder="Search" aria-label="Search">
+              <a href="category.html"><button class="btn btn-outline-success" type="submit">Search</button></a>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <!-- navbar -->
+    <!-- home content -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./images/k1 - Copy.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/k2 - Copy.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/k3 - Copy.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button> </div>
+    <!-- home content -->
+    <!-- product heading -->
+<h1 style="text-align: center; color: #ffc000; margin-top: 30px; ">Products</h1>
+<hr style="color: #ffc000; border: 2px solid #ffc800;">
+    <div class="container-fluid text-center">
+        <div class="row my-auto">
+
+        </div>
+    </div>
+<!--  -->
+    <!-- product cards -->
+    <div class="container-fluid" id="product-cards">
+<!--  -->
+<script src="p.js"></script>
+<script>
+    for (var i = 1; i < product.length; i++) {
+        document.getElementsByClassName('row')[0].innerHTML += `
+<div class="product-card">
+    <img class="product-image" src="${product[i].image}" alt="Product Image">
+    
+    <h5 class="product-title">${product[i].name}</h5>
+    <h5>  <p class="card-text" style="font-size:13px;">${product[i].brand}</p></h5>
+    <p class="product-price">${product[i].price}</p>
+    <a href="${product[i].path}"><button class="add-to-cart">View</button></a>
+</div>
+`
+    }
+</script>
+    </div>
+    <!-- product cards -->
+    <!-- other cards -->
+    <div class="container" id="other-cards">
+      <div class="row">
+        <div class="col-md-6 py-3 py-md-0">
+          <div class="card ">
+            <img src="./images/kk1.png" alt="">
+            <div class="card-img-overlay">
+              <h3>Best Appliances</h3>
+              <h5>Latest Collection</h5>
+              <p>Up To 50% Off</p>
+              <button id="shopnow">Shop Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 py-3 py-md-0">
+          <div class="card ">
+            <img src="./images/kk2.png" alt="">
+            <div class="card-img-overlay">
+              <h3>Best Products</h3>
+              <h5>Latest Collection</h5>
+              <p>Up To 50% Off</p>
+              <button id="shopnow">Shop Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    <!-- other cards -->
+    <!-- banner -->
+    <section class="banner">
+      <div class="content">
+        <h1> <span>Kitchen Appliances</span>
+          <br>
+          Up To <span id="span2">50%</span> Off
+        </h1>
+        <p>Best And High Quality Products And Appliances
+        </p>
+        <a href="category.html"><div class="btn" style="border: none;"><button>Shop Now</button></div></a>
+  
+      </div>
+      <div class="img">
+        <img src="./images/image1.png" alt="">
+      </div>
+    </section>
+    <!-- banner -->
+    <h1 style="text-align: center; color: #ffc000;  align-items: center; margin-top: 30px;">  Featured Products</h1>
+    <hr style="color: #ffc000; border: 2px solid #ffc800;">
+    <div style="display: flex; flex-wrap: wrap;">
+      <div class="product-card">
+        <img class="product-image" src="./images/106.jpg" alt="Product Image">
+        <h5 class="product-title">FRY PAN</h5>
+        <h5>  <p class="card-text" style="font-size:13px;"> ANEX</p></h5>
+        <p class="product-price">RS  5000</p>
+        <a href="view.html"><button class="add-to-cart">View</button></a>
+    </div>
+    <div class="product-card">
+      <img class="product-image" src="./images/117.jpg" alt="Product Image">
+      <h5 class="product-title">BLACK POT SET</h5>
+      <h5>  <p class="card-text" style="font-size:13px;"> ANEX</p></h5>
+      <p class="product-price">RS  12000</p>
+      <a href="view1.html"><button class="add-to-cart">View</button></a>
+  </div>
+  <div class="product-card">
+    <img class="product-image" src="./images/119.jpg" alt="Product Image">
+    <h5 class="product-title">BLACK QARHI</h5>
+    <h5>  <p class="card-text" style="font-size:13px;"> ANEX</p></h5>
+    <p class="product-price">RS  3000</p>
+    <a href="view2.html"><button class="add-to-cart">View</button></a>
+</div>
+</div>
+  <!-- product cards -->
+    <div class="container" id="product-cards">
+     <!-- other cards -->
+    <div class="container" id="other">
+      <div class=" row justify-content-center d-flex align-self-center">
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/k4.jpg" alt="">
+            <div class="ddd" class="card-img-overlay" style="background-color: rgb(36, 35, 35); text-align: center;">
+              <h3>Kitchen Products</h3>
+              <p>Latest collection Up To 50% Off</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/k2.jpg" alt="">
+            <div class="ddd" class="card-img-overlay" style="background-color: rgb(36, 35, 35); text-align: center;">
+              <h3>Kitchen Inspiring</h3>
+              <p>Latest collection Up To 50% Off</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+          <div class="card">
+            <img src="./images/k3.jpg" alt="">
+            <div class="ddd" class="card-img-overlay" style="background-color: rgb(36, 35, 35); text-align: center;">
+              <h3>Food Factory</h3>
+              <p>Latest collection Up To 50% Off</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- other cards -->
+    <h1 style="text-align: center; color: #ffc000; margin-top: 30px; ">COMING UP</h1>
+    <div style="display: flex; flex-wrap: wrap;">
+      <div class="product-card">
+        <img class="product-image" src="./images/106.jpg" alt="Product Image">
+        <h5 class="product-title">FRY PAN</h5>
+        <h5>  <p class="card-text" style="font-size:13px;">****Rs</p></h5>
+        <p class="product-price"></p>
+        <button class="add-to-cart">SOON</button>
+    </div>
+    <div class="product-card">
+      <img class="product-image" src="./images/117.jpg" alt="Product Image">
+      <h5 class="product-title">BLACK POT SET</h5>
+      <h5>  <p class="card-text" style="font-size:13px;">****Rs</p></h5>
+      <p class="product-price"></p>
+      <button class="add-to-cart">SOON</button>
+  </div>
+  <div class="product-card">
+    <img class="product-image" src="./images/119.jpg" alt="Product Image">
+    <h5 class="product-title">BLACK QARHI</h5>
+    <h5>  <p class="card-text" style="font-size:13px;">****Rs</p></h5>
+    <p class="product-price"></p>
+    <button class="add-to-cart">SOON</button>
+</div>
+<div class="product-card">
+  <img class="product-image" src="./images/123.jpg" alt="Product Image">
+  <h5 class="product-title">RED WHITE PAN</h5>
+  <h5>  <p class="card-text" style="font-size:13px;">****Rs</p></h5>
+  <p class="product-price"></p>
+  <button class="add-to-cart">SOON</button>
+</div>
+<div class="product-card">
+  <img class="product-image" src="./images/112.jpg" alt="Product Image">
+  <h5 class="product-title">FRY PAN</h5>
+  <h5>  <p class="card-text" style="font-size:13px;">****Rs</p></h5>
+  <p class="product-price"></p>
+  <button class="add-to-cart">SOON</button>
+</div>
+<div class="product-card">
+  <img class="product-image" src="./images/124.jpg" alt="Product Image">
+  
+  <h5 class="product-title">FRY PAN</h5>
+  <h5>  <p class="card-text" style="font-size:13px;">****Rs</p></h5>
+  <p class="product-price"></p>
+  <button class="add-to-cart">SOON</button>
+</div>
+    <div class="product-card">
+      <img class="product-image" src="./images/126.webp" alt="Product Image">
+      
+      <h5 class="product-title">ANEX PAN</h5>
+      <h5>  <p class="card-text" style="font-size:13px;">****Rs</p></h5>
+      <p class="product-price"></p>
+      <button class="add-to-cart">SOON</button>
+  </div>
+  <div class="product-card">
+    <img class="product-image" src="./images/103.webp" alt="Product Image">
+    <h5 class="product-title">RED POT</h5>
+    <h5>  <p class="card-text" style="font-size:13px;">****Rs</p></h5>
+    <p class="product-price"></p>
+    <button class="add-to-cart">SOON</button>
+  </div>
+  <div class="product-card">
+    <img class="product-image" src="./images/130.jpg" alt="Product Image">
+    <h5 class="product-title">TAWA</h5>
+    <h5>  <p class="card-text" style="font-size:13px;">****Rs</p></h5>
+    <p class="product-price"></p>
+    <button class="add-to-cart">SOON</button>
+  </div>
+</div>
+    </div>
+    <!-- product cards -->
+    <!-- offer -->
+    <div class="container" id="offer">
+      <div class=" row justify-content-center d-flex align-self-center">
+        <div class="col-md-3 py-3 py-md-0">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <h3>Free Shipping</h3>
+          <p>On order over $1000</p>
+        </div>
+        <div class="col-md-3 py-3 py-md-0">
+          <i class="fa-solid fa-rotate-left"></i>
+          <h3>Free Returns</h3>
+          <p>Within 30 days</p>
+        </div>
+        <div class="col-md-3 py-3 py-md-0">
+          <i class="fa-solid fa-truck"></i>
+          <h3>Fast Delivery</h3>
+          <p>World Wide</p>
+        </div>
+        <div class="col-md-3 py-3 py-md-0">
+          <i class="fa-solid fa-thumbs-up"></i>
+          <h3>Big choice</h3>
+          <p>Of products</p>
+        </div>
+      </div>
+    </div>
+    <!-- offer -->
+    <section class="banner">
+      <div class="content">
+        <h1> <span >Compare<span id="span2">Your</span> Products</span>
+          <br>
+        </h1>
+        <p style="width: 45%; margin-top: 50px;">You gain the power of informed choice. ensuring your purchase aligns with expectations. Comparisons reveal features, helping you find the perfect fit. Ultimately, navigating the options empowers you to make a confident and satisfying decision.
+        </p>
+        <a href="comprar.html"><div class="btn" style="border: none;"><button>Compare Now</button></div></a>
+  
+      </div>
+      <div class="img">
+        <img src="./images/image1.png" alt="">
+      </div>
+    </section>
+    <!-- newslater -->
+    <div class="container" id="newslater">
+      <h3 class="text-center">Subscribe To The Electronic Shop For Latest upload.</h3>
+      <div class="input text-center">
+        <input type="text" placeholder="Enter Your Email..">
+        <button id="subscribe">SUBSCRIBE</button>
+      </div>
+    </div>
+    <!-- newslater -->
+<!-- footer -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <a class="navbar-brand" href="index.html" id="logo"><span id="span1">T</span>AS<span>HA</span></a>
+          <p>
+            Tasha is known for the best and high quality product for Kitchen Appliances
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>My Accounts</h4>
+         <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="category.html">Shop</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="#">About Us</a></li>
+         </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Usefull Links</h4>
+         <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Terms of service</a></li>
+          <li><a href="#">Privacy policey</a></li>
+         </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Contact Us</h4>
+          <strong>Phone:</strong> +92 54449375634 <br>
+          <strong>Email:</strong> info@tasha.com <br>
+          <strong>Address:</strong> 121 Rock Sreet, 21 Avenue, New  York, NY 92103-9000<br>
+          <strong>Hours:</strong> 10:00AM - 11:00PM , Mon-Sat<br>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Social Networks</h4>
+          <p>Contact us on </p>
+          <div class="socail-links mt-3">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-skype"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container py-4">
+    <div class="copyright">
+      &copy; Copyright <strong><span>TASHA</span></strong>. All Rights Reserved
+    </div>
+  </div>
+</footer>
+<!-- footer -->
+    <a href="" class="arrow"><i><img src="./images/arrow.png" alt=""></i></a>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ </div>
+
+</body>
+</html>

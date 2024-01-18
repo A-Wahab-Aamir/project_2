@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neef</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap links -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        
+        <style>
+            /* Basic Styles */
+       .product-card {
+           margin-top: 50px;
+           margin-bottom: 5px;
+        margin-left: auto;
+        margin-right: auto;
+           border: 1px solid #ccc;
+           border-radius: 10px;
+           padding: 5px;
+           text-align: center;
+           width: 300px;
+           background-color: #ffffff;
+           box-shadow: 10px 10px 54px rgba(6, 6, 6, 0.3);
+       }
+
+       /* Product Image Styles */
+       .product-image {
+           max-width: 100%;
+           height: 229px;
+           border-radius: 10px;
+           
+       }
+
+       /* Product Title Styles */
+       .product-title {
+           font-size: 18px;
+           font-weight: bold;
+           margin: 10px 0;
+       }
+
+       /* Product Price Styles */
+       .product-price {
+           color: #000000;
+           font-size: 24px;
+           margin: 10px 0;
+       }
+
+       /* Add to Cart Button Styles */
+       .add-to-cart {
+           background-color: #ffffff;
+           color: #ffc800;
+           border: 2px solid #ffc800;
+           border-radius: 30px;
+           padding: 10px 20px;
+           cursor: pointer;
+           font-size: 16px;
+           margin: 10px 0;
+           width: 90px;
+       }
+
+       .carousel {
+           margin: 50px auto;
+           padding: 0 70px;
+   
+       }
+
+       .carousel .item {
+           color: #747d89;
+           min-height: 325px;
+           text-align: center;
+           overflow: hidden;
+       }
+
+       .carousel .thumb-wrapper {
+           padding: 25px 15px;
+           background: #fff;
+           border-radius: 6px;
+           text-align: center;
+           position: relative;
+           box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+       }
+
+       .carousel .item .img-box {
+           height: 200px;
+           margin-bottom: 20px;
+           width: 100%;
+           position: relative;
+       }
+
+       .carousel .item img {
+           max-width: 100%;
+           max-height: 100%;
+           display: inline-block;
+           position: absolute;
+           bottom: 0;
+           margin: 0 auto;
+           left: 0;
+           right: 0;
+       }
+
+       .carousel .item h4 {
+           font-size: 18px;
+       }
+
+       .carousel .item h4,
+       .carousel .item p,
+       .carousel .item ul {
+           margin-bottom: 5px;
+       }
+
+       .carousel .thumb-content .btn {
+           color: #7ac400;
+           font-size: 11px;
+           text-transform: uppercase;
+           font-weight: bold;
+           background: none;
+           border: 1px solid #7ac400;
+           padding: 6px 14px;
+           margin-top: 5px;
+           line-height: 16px;
+           border-radius: 20px;
+       }
+
+       .carousel .thumb-content .btn:hover,
+       .carousel .thumb-content .btn:focus {
+           color: #fff;
+           background: #7ac400;
+           box-shadow: none;
+       }
+
+       .carousel .thumb-content .btn i {
+           font-size: 14px;
+           font-weight: bold;
+           margin-left: 5px;
+       }
+
+       .carousel .carousel-control {
+           height: 44px;
+           width: 40px;
+           background: #7ac400;
+           margin: auto 0;
+           border-radius: 4px;
+           opacity: 0.8;
+       }
+
+       .carousel .carousel-control:hover {
+           background: #78bf00;
+           opacity: 1;
+       }
+
+       .carousel .carousel-control i {
+           font-size: 36px;
+           position: absolute;
+           top: 50%;
+           display: inline-block;
+           margin: -19px 0 0 0;
+           z-index: 5;
+           left: 0;
+           right: 0;
+           color: #fff;
+           text-shadow: none;
+           font-weight: bold;
+       }
+
+       .carousel .item-price {
+           font-size: 13px;
+           padding: 2px 0;
+       }
+
+       .carousel .item-price strike {
+           opacity: 0.7;
+           margin-right: 5px;
+       }
+
+       .star-rating li {
+           padding: 0;
+       }
+
+       .star-rating i {
+           font-size: 14px;
+           color: #ffc000;
+       }
+
+       div.col-md-12 {
+           margin-bottom: -85px;
+       }
+
+       div.col-sm-3 {
+           margin-bottom: 10px;
+      
+       }
+       
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+    border-radius: 0px;
+    background-color: #000000;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+    background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ffc800;
+    background-image: -webkit-linear-gradient(90deg,
+                                          transparent,
+                                          rgba(0, 0, 0, 0.4) 50%,
+                                          transparent,
+                                          transparent)
+}
+
+  </style>
+</head>
+<body>
+<!-- The container element for the content and the scrollbar -->
+<div class="scrollbar" id="style-13" style="height: 100%; ">
+ <nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html" id="logo"><span id="span1">T</span>AS<span>HA</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><img src="./images/menu.png" alt="" width="30px"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="category.html">Shop</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="category.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Category
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #ffc000;">
+              <li><a class="dropdown-item" href="cookware.html">Cookware</a></li>
+              <li><a class="dropdown-item" href="freige.html">Refrigeration</a></li>
+              <li><a class="dropdown-item" href="appliancs.html">Appliances </a></li>
+              <li><a class="dropdown-item" href="food.html">Food Storage  </a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <form class="d-flex" id="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<!-- navbar -->
+
+<body>
+
+    
+    <div class="container-fluid p-5 m- "style="text-align:center; background-color: #747d89; color: #ffc000; font-family: Arial;">
+        <h1>NEEF<span id="user"></span></h1>
+    </div>
+    <div class="container-fluid text-center">
+        <div class="row my-auto">
+
+        </div>
+    </div>
+</body>
+<script src="file18.js"></script>
+<script>
+    for (var i = 1; i < product.length; i++) {
+        document.getElementsByClassName('row')[0].innerHTML += `
+        <div class="product-card">
+    <img class="product-image" src="${product[i].image}" alt="Product Image">
+    <h5 class="product-title">${product[i].name}</h5>
+    <h5>  <p class="card-text">${product[i].brand}</p></h5>
+    <p class="product-price">${product[i].price}</p>
+    <a href="${product[i].path}"><button class="add-to-cart">View</button></a>
+</div>
+`
+
+    }
+</script>
+
+<script>
+    var getusername = localStorage.getItem('username')
+    document.getElementById('user').innerHTML = getusername;
+</script>
+<!-- footer -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<footer id="footer" style="margin-top: 0px;">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+  
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <a class="navbar-brand" href="index.html" id="logo"><span id="span1">T</span>AS<span>HA</span></a>
+            <p>
+              Tasha is known for the best and high quality product for Kitchen Appliances
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>My Accounts</h4>
+           <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="category.html">Shop</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="#">About Us</a></li>
+           </ul>
+          </div>
+  
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Usefull Links</h4>
+           <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policey</a></li>
+           </ul>
+          </div>
+  
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Contact Us</h4>
+  
+            <strong>Phone:</strong> +92 54449375634 <br>
+            <strong>Email:</strong> info@tasha.com <br>
+            <strong>Address:</strong> 121 Rock Sreet, 21 Avenue, New  York, NY 92103-9000<br>
+            <strong>Hours:</strong> 10:00AM - 11:00PM , Mon-Sat<br>
+          </div>
+  
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Contact us on </p>
+            <div class="socail-links mt-3">
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-skype"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          
+          </div>
+  
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>TASHA</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+  <!-- footer -->
+</html>
+
+</html>
